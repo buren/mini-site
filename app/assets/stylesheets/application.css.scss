@@ -118,9 +118,7 @@
  	}	
  }
 
-
  /* GALLERY PAGE */
-
  .gallery-index-view{
  	padding-top: $page_top_padding;
  	.row-fluid{
@@ -134,7 +132,7 @@
  				max-width: $gallery_index_image_width;
  				max-height: $gallery_index_image_height;
  			}
- 			h2{
+ 			h1 {
  				font-size: $page_content_title_size;
  			}
  			p{
@@ -167,20 +165,11 @@
  	margin-top: $page_top_padding;
  	margin-bottom: $page_bottom_padding;
  	img {
- 		width: 100%;
+ 		margin-top: 60px;
+ 		width: 90%;
  	}
  }
 
- /* BLOG PAGE */
- .blog-post{
- 	p{
- 		font-size: 13px;
- 	}
- }
- img.blog-post-image{
- 	padding-bottom: 20px;
- 	width: 100%;
- }
 
  .btn {
  	font-family: 'Julius Sans One', sans-serif;
@@ -220,9 +209,34 @@
 	}
 }
 
-
 .static-post {
 	margin: 60px 0;
+}
+
+
+/* BLOG PAGE */
+.blog-page-content {
+	margin: 60px 0;
+	.blog-post{
+		h1 {
+			margin: 20px 0;
+		}
+		#post_content {
+			margin-bottom: 20px;
+		}
+		p{
+			font-size: 13px;
+		}
+	}
+	img.blog-post-image{
+		padding-bottom: 20px;
+		width: 100%;
+	}
+}
+
+/* Page styling */
+.page-actions {
+	margin-bottom: 20px;
 }
 
 

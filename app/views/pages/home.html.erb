@@ -1,3 +1,17 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'Edit page', edit_admin_page_path(@page) if authenticated? and not_editing? %>
+<div id="home">
+	<div class="row-fluid" style="padding-bottom:0px;">
+		<div class="span6">
+			<div class="home-box">
+				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
+				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
+			</div>
+		</div>
+		<div class="span6">
+			<div class="home-box">
+				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
+				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render 'pages/page_actions' %>

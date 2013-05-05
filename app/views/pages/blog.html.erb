@@ -1,3 +1,7 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/blog.html.erb</p>
-<%= link_to 'Edit page', edit_admin_page_path(@page) if authenticated? and not_editing? %>
+<div class="blog-page-content">
+	<%= render 'posts/add_post' %>
+	<% @posts.each do |post| %>
+		<%= render 'posts/blog_page_post', post: post %>
+	<% end %>
+	<%= render 'pages/page_actions' %>
+</div>

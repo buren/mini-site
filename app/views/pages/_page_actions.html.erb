@@ -1,0 +1,7 @@
+<% if authenticated? && not_editing? %>
+	<div class="page-actions">
+		<hr>
+		<%= link_to 'Edit page', edit_admin_page_path(@page), class: 'btn' %>
+		<%= link_to 'New page', new_admin_page_path, class: 'btn btn-info' %>
+	</div>
+<% end %>

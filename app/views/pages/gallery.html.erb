@@ -1,3 +1,16 @@
-<h1>Pages#show</h1>
-<p>Find me in app/views/pages/gallery.html.erb</p>
-<%= link_to 'Edit page', edit_admin_page_path(@page) if authenticated? and not_editing? %>
+<div class="gallery-index-view">
+	<%= render 'posts/add_post' %>
+	<% @posts.each_with_index do |post, index| %>
+		<%= render 'posts/gallery_page_post', post: post, index: index %>
+	<% end %>
+	<div class="row-fluid">
+		<p class="pagination">
+			<a href="#" class="active">1</a>
+			-
+			<a href="#">2</a>
+			-
+			<a href="#">3</a>
+		</p>
+	</div>
+</div>
+<%= render 'pages/page_actions' %>
