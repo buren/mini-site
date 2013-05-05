@@ -4,4 +4,8 @@
 		<%= render 'posts/blog_page_post', post: post %>
 	<% end %>
 	<%= render 'pages/page_actions' %>
+	<p class="pagination">
+		<%= paginate @posts, window: 2 %>
+	</p>
+	
 </div>

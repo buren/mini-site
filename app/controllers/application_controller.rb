@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper_method :authenticated?, :authenticated_for_edit?, :is_editing?, :not_editing?
 
   def header_links
-  	@header_links = Home.first ? Home.first.pages.order(:header_priority).limit(5) : []
+  	@header_links = Home.first ? Home.first.pages.where('template != ?', 'home').order(:header_priority).limit(5) : []
 	end
 
 	def authenticated?

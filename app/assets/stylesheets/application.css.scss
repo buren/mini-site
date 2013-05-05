@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *= require bootstrap/bootstrap
  *= require bootstrap/bootstrap-responsive
+ *= require font-awesome
  *= require_self
  */
  $site_width: 760px;
@@ -32,7 +33,7 @@
 
  /*  SITE COLORS  */
  $black: #1D1D1B;
- $border_color: #bfbfbf;
+ $border_color: #bfbfbf; 
  
 .hidden {
 	display: none;
@@ -140,19 +141,6 @@
  			}
  		}
  	}
- 	p.pagination{
- 		color: $black;
- 		font-size: 16px;
- 		text-align: center;
- 		padding-bottom: 10px;
- 		a{
- 			text-decoration: none;
- 			color: $black;
- 			.active{
- 				text-decoration: underline;
- 			}
- 		}
- 	}
  }
 
  /* STATIC PAGE */
@@ -164,9 +152,12 @@
  .static-page-content {
  	margin-top: $page_top_padding;
  	margin-bottom: $page_bottom_padding;
+ 	h1 {
+ 		margin-bottom: 20px;
+ 	}
  	img {
- 		margin-top: 60px;
- 		width: 90%;
+ 		margin-top: 70px;
+ 		width: 100%;
  	}
  }
 
@@ -238,6 +229,35 @@
 .page-actions {
 	margin-bottom: 20px;
 }
+
+.disabled {
+	color: #ccc !important;
+}
+
+nav.pagination{
+	color: $black;
+	font-size: 16px;
+	text-align: center;
+	padding-bottom: 10px;
+	span.last, span.first {
+		a {
+			color: #ccc;
+		}
+	}
+	span.prev {
+		margin-right: 15px;
+	}
+	span.next {
+		margin-left: 15px;
+	}
+	a{
+		text-decoration: none;
+		color: $black;
+		.active{
+			text-decoration: underline;
+		}
+	}
+	}
 
 
  @media (max-width: 480px){

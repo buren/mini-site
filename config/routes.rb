@@ -1,4 +1,7 @@
 BlogApplication::Application.routes.draw do
+
+  root to: 'pages#home'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   
@@ -17,5 +20,4 @@ BlogApplication::Application.routes.draw do
     end
   end
 
-  root to: 'pages#home'
 end

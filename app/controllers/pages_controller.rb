@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   def show
   	@page = Page.find_by_id(params[:id])
   	if @page.posts
-  		@posts =  @page.posts.order('created_at desc')
+  		@posts =  @page.posts.order('created_at desc').page(params[:page]).per(posts_per_page(@page.template))
   		@posts = @posts.where(id: params[:editing_post_id]) unless params[:editing_post_id].blank?
   	else
   		@posts = []
@@ -38,6 +38,19 @@ private
 			render 'pages/' + @page.template 
 		else
 			render 'shared/page_not_found'
+		end
+	end
+
+	def posts_per_page template
+		case template
+		when 'blog'
+			1
+		when 'gallery'
+			4
+		when 'home'
+			4
+		else
+			1000
 		end
 	end
 

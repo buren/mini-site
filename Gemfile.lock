@@ -173,7 +173,7 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   eventmachine (~> 1.0.3)
-  jquery-rails
+  kaminari
   mercury-rails
   meta_search (>= 1.1.0.pre)
   mysql2

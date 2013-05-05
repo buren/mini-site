@@ -27,7 +27,9 @@ gem "eventmachine", "~> 1.0.3"
 gem 'thin' # Use thin insead of WebBrick
 
 gem 'mercury-rails'
-gem 'jquery-rails'
+
+# Easy pagination
+gem 'kaminari'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

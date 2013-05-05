@@ -1,8 +1,8 @@
 <div class="row-fluid static-post <%= new_post ? 'new-post hidden' : '' %>">
-	<div class="span6">
+	<div class="span6" style="padding-right:10px">
 		<%= render 'posts/post_fields', post: post %>
 	</div>
-	<div class="span6">
+	<div class="span6" style="margin-left:0">
 		<%= render_editable_content(:img, '', { src: 'http://placehold.it/300x200', id: 'post_image' , class: 'static-page-image' }, 'image') %>
  		<!-- <%#= post.image %> -->
 	</div>
