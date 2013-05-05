@@ -4,13 +4,7 @@
 		<%= render 'posts/gallery_page_post', post: post, index: index %>
 	<% end %>
 	<div class="row-fluid">
-		<p class="pagination">
-			<a href="#" class="active">1</a>
-			-
-			<a href="#">2</a>
-			-
-			<a href="#">3</a>
-		</p>
+		<%= paginate @posts, window: 2 %>
 	</div>
 </div>
 <%= render 'pages/page_actions' %>

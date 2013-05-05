@@ -2,6 +2,6 @@
 	<%= form_for Post.new do |f| %>
 		<%= f.hidden_field :page_id, value: @page.id %>
 		<%= f.hidden_field :url, value: request.path %>
-		<%= f.submit 'Add post', class: 'btn btn-info' %>
+		<%= f.submit 'New post', class: 'btn btn-info' %>
 	<% end %> 
 <% end %>
