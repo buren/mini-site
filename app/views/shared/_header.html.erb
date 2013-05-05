@@ -1,0 +1,14 @@
+<div id="site-header">
+	<div id="header-image-container">
+		<a href="/">
+			<%= image_tag 'header.png', id: 'header-image' %>
+		</a>
+	</div>
+	<div id="menu">
+		<% @header_links.each do |page| %>
+		<div class="box-link">
+			<%= link_to page.title, page, class: 'header-link' %> 
+		</div>
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+<div class="static-page-content">
+	<% if not_editing? %>
+		<%= form_for Post.new do |f| %>
+			<%= f.hidden_field :page_id, value: @page.id %>
+			<%= f.hidden_field :url, value: request.path %>
+			<%= f.submit 'Add post', class: 'btn btn-info' %>
+		<% end %> 
+	<% end %>
+	<% @posts.each do |post| %>
+		<%= render 'posts/static_page_post', post: post, new_post: false %>
+	<% end %>
+	<hr>
+	<%= link_to 'Edit page', edit_admin_page_path(@page), class: 'btn edit-page-link' if authenticated? && not_editing? %>
+</div>
+

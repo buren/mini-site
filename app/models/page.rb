@@ -3,6 +3,9 @@ class Page < ActiveRecord::Base
   belongs_to :home
   has_many :posts
 
+  TEMPLATES = %w(blog gallery home static)
+
+  validates_presence_of :home
   validates_uniqueness_of :permalink, :title
-  validates_inclusion_of :template, in: %w(blog gallery home static), allow_nil: false
+  validates_inclusion_of :template, in: TEMPLATES, allow_nil: false
 end
