@@ -43,6 +43,10 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
+    aws-sdk (1.8.1.2)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.0.1)
     better_errors (0.3.2)
       coderay (>= 1.0.0)
@@ -53,6 +57,10 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -107,7 +115,14 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     mysql2 (0.3.11)
+    nokogiri (1.5.6)
     orm_adapter (0.4.0)
+    paperclip (3.4.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.15.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
@@ -164,6 +179,7 @@ GEM
     uglifier (2.0.1)
       execjs (>= 0.3.0)
       multi_json (~> 1.0, >= 1.0.2)
+    uuidtools (2.1.3)
     warden (1.2.1)
       rack (>= 1.0)
 
@@ -172,6 +188,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  aws-sdk
   better_errors (= 0.3.2)
   binding_of_caller
   coffee-rails (~> 3.2.1)
@@ -181,6 +198,7 @@ DEPENDENCIES
   mercury-rails
   meta_search (>= 1.1.0.pre)
   mysql2
+  paperclip
   pg
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)

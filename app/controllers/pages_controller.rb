@@ -24,6 +24,7 @@ class PagesController < ApplicationController
 		post.title = mercury_params[:title]
 	  post.content = mercury_params[:content]
 	  post.page_id = mercury_params[:page_id]
+    post.image_holder = mercury_params[:image_holder]
 	  post.published = true
 	  post.save!
 	  render text: ""
@@ -36,7 +37,7 @@ private
 
 	def render_page
 		if @page
-			render 'pages/' + @page.template 
+			render 'pages/' + @page.template
 		else
 			render 'shared/page_not_found'
 		end
@@ -56,11 +57,13 @@ private
 	end
 
 	def construct_params
+    content = params[:content]
 		mercury_params = {
-			page_id: params[:content][:page_id][:value],
-			post_id: params[:content][:post_id][:value],
-			title: params[:content][:post_title][:value],
-			content: params[:content][:post_content][:value],
+			page_id: content[:page_id][:value],
+			post_id: content[:post_id][:value],
+			title: content[:post_title][:value],
+			content: content[:post_content][:value],
+      image_holder: content[:post_image_holder][:value]
 		}
 	end
 

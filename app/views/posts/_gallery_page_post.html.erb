@@ -2,7 +2,7 @@
 <%= '<div class="row-fluid">'.html_safe if index%2 == 0 %>
 	<div class="span6">
 		<div class="gallery-box">
-			<%= image_tag 'http://placehold.it/250x350', class: 'gallery_image' %>
+			<%= render 'posts/post_image_field', post: post %>
 			<%= render 'posts/post_fields', post: post %>
 		</div>
 	</div>

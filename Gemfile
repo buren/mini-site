@@ -37,4 +37,7 @@ gem 'jquery-turbolinks'
 
 
 # Image processing
-# gem 'paperclip'
+gem 'paperclip'
+# For AWS S3 image storing
+gem 'aws-sdk'
+

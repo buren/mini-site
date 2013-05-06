@@ -1,14 +1,14 @@
 module ApplicationHelper
 
-	def render_editable_content element, content, html_options, mercury_type, data_options = { data: {} }		
+	def render_editable_content element, content, html_options, mercury_type, data_options = { data: {} }
 		unless authenticated_for_edit?
 			html_options.merge!({ contenteditable: false })
 			return content_tag element, content, html_options, data_options[:data]
-		end	
+		end
 		data_options[:data].merge!(mercury: mercury_type)
 		html_options.merge!({ contenteditable: true })
 		html_options.merge!(data_options)
 		return content_tag element, content, html_options
 	end
-	
+
 end

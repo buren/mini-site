@@ -25,5 +25,4 @@ class ApplicationController < ActionController::Base
 	  !is_editing?
 	end
 
-
 end

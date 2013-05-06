@@ -1,16 +1,20 @@
 BlogApplication::Application.routes.draw do
 
+  namespace :mercury do
+    resources :images
+  end
+
   root to: 'pages#home'
-  
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
-  resources :posts do 
+
+  resources :posts do
     member do
       delete :destroy
       post :create
     end
-  end  
+  end
 
   mount Mercury::Engine => '/'
 

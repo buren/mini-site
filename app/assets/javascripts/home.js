@@ -1,7 +1,10 @@
-var ready;
-
 $(document).ready(function() {
 	$('#site-container').css('min-height', $(window).height()-100);
+
+  $('#toggle-action-buttons').on('click', function(e) {
+    e.preventDefault();
+    $('.btn').slideToggle(1000);
+  });
 
   $('.post-delete-link-blog').on('click', function() {
     $(this).parents(".blog-post").slideToggle(2000);
@@ -20,6 +23,3 @@ $(document).ready(function() {
   });
 
 });
-
-// $(document).ready(ready);
-// $(document).on('page:load', ready);
