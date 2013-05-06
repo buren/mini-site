@@ -10,18 +10,12 @@
 # WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 # GO AFTER THE REQUIRES BELOW.
 #
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
 #= require home
 #= require mercury_page
 #= require bootstrap
-#= require_self 
+#= require_self
 
 $(window).height()
-
-ready = -> 
-	$('.post-delete-link').on 'click', ->
-		$(this).parents(".row-fluid").slideToggle 2000
-
-$(document).ready(ready)
-$(document).on('page:load', ready)

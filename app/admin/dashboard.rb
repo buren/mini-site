@@ -3,31 +3,39 @@ ActiveAdmin.register_page "Dashboard" do
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ 'Dashboard' } do
-    div :class => "blank_slate_container", :id => "dashboard_default_message" do
-      span :class => "blank_slate" do
-        span 'Welcome'
-        small 'To site'
+    panel "Pages" do
+      table_for Page.order(:title) do
+        column 'Title' do |page|
+          link_to page.title, admin_page_path(page)
+        end
+        column 'Number of posts' do |page|
+          page.posts.count
+        end
+        column 'Latest posts' do |page|
+          page.posts.limit(5).map { |post| link_to post.title, admin_post_path(post) }.join(', ').html_safe
+        end
+        strong { link_to "All pages", admin_pages_path }
       end
     end
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
+    columns do
+      column do
+        panel "Recent Posts" do
+          table_for Post.order("created_at desc").limit(15) do
+            column "Page" do |post|
+               link_to post.page.title, admin_page_path(post.page)
+            end
+            column "Title" do |post|
+               link_to post.title, admin_post_path(post)
+            end
+            column "Content" do |post|
+              truncate(post.content, :length => 250, :omission => '...').html_safe
+            end
+            strong { link_to "All posts", admin_posts_path }
+          end
+        end
+      end
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
+    end
   end # content
 end

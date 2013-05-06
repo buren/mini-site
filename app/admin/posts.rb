@@ -1,5 +1,5 @@
 ActiveAdmin.register Post do
-	scope :all, :default => true
+	scope :all_posts, :default => true
 	scope :published
 	scope :unpublished
 

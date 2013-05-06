@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 ruby "2.0.0"
 
-group :production do 
+group :production do
 	gem 'pg'
 end
 
@@ -13,7 +13,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development do 
+group :development do
 	gem 'better_errors', '0.3.2' # Better rails error pages
 	gem 'binding_of_caller'
 	gem 'mysql2'
@@ -33,6 +33,8 @@ gem 'kaminari'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 
 # Image processing
 # gem 'paperclip'
