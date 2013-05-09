@@ -7,6 +7,9 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore OSX **** file
+.DS_Store
+
 /public/system
 
 # Ignore the default SQLite database.

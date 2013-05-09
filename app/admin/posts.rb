@@ -9,7 +9,7 @@ ActiveAdmin.register Post do
 	    link_to post.title, admin_post_path(post)
 	  end
 	  column "Content" do |post|
-	    post.content.html_safe
+	    raw post.content
 	  end
 	  column "Page" do |post|
 	    link_to post.page.title, admin_post_path(post)

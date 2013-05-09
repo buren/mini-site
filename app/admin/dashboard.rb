@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
           page.posts.count
         end
         column 'Latest posts' do |page|
-          page.posts.limit(5).map { |post| link_to post.title, admin_post_path(post) }.join(', ').html_safe
+          raw page.posts.limit(5).map { |post| link_to post.title, admin_post_path(post) }.join(', ')
         end
         strong { link_to "All pages", admin_pages_path }
       end
@@ -29,7 +29,7 @@ ActiveAdmin.register_page "Dashboard" do
                link_to post.title, admin_post_path(post)
             end
             column "Content" do |post|
-              truncate(post.content, :length => 250, :omission => '...').html_safe
+              raw (truncate(post.content, :length => 250, :omission => '...'))
             end
             strong { link_to "All posts", admin_posts_path }
           end
