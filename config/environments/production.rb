@@ -20,7 +20,6 @@ BlogApplication::Application.configure do
   # Precompile assets locally
   config.assets.initialize_on_precompile = false
 
-
   # Generate digests for assets URLs
   config.assets.digest = true
 
@@ -36,12 +35,16 @@ BlogApplication::Application.configure do
 
   # For AWS S3 image storing with paperclip
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    storage: :s3,
+    s3_protocol: 'http',
+    url: ':s3_domain_url',
+    path: '/:class/:attachment/:id_partition/:style/:filename',
+    s3_credentials: {
+      bucket: ENV['AWS_BUCKET'],
+      access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
+    },
+    s3_headers: {'Cache-Control' => 'max-age=300000000, public', 'Expires' => 10.years.from_now.httpdate}
   }
 
 end

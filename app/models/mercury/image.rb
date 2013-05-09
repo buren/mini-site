@@ -4,12 +4,11 @@ class Mercury::Image < ActiveRecord::Base
 
   attr_accessible :image
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
         # :path => ":rails_root/public/system/:attachment/:id/:style/:filename",
         # :url => "/system/:attachment/:id/:style/:filename",
-        :s3_headers => {'Cache-Control' => 'max-age=300000000, public', 'Expires' => 10.years.from_now.httpdate}
 
-  delegate :url, :to => :image
+  delegate :url, to: :image
 
   def serializable_hash(options = nil)
     options ||= {}
