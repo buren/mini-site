@@ -8,4 +8,13 @@ class Page < ActiveRecord::Base
   validates_presence_of :home
   validates_uniqueness_of :permalink, :title
   validates_inclusion_of :template, in: TEMPLATES, allow_nil: false
+
+  def to_param
+    "#{id} #{permalink}".parameterize
+  end
+
+  def has_home_page?
+    Page.find_by_template 'home'
+  end
+
 end

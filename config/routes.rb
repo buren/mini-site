@@ -16,6 +16,9 @@ BlogApplication::Application.routes.draw do
     end
   end
 
+  get :destroy_unpublished, to: 'posts#destroy_unpublished'
+
+
   mount Mercury::Engine => '/'
 
   resources :pages do

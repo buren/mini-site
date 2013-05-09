@@ -35,4 +35,10 @@ BlogApplication::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  # Local storage in development
+  config.paperclip_defaults = {
+    path: ":rails_root/public/system/:attachment/:id/:style/:filename",
+    url: "/system/:attachment/:id/:style/:filename"
+  }
+
 end
