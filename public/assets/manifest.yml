@@ -15,6 +15,8 @@ active_admin.js: active_admin-74c5a2a0ebd04577979929732488c14b.js
 active_admin/index.js: active_admin-74c5a2a0ebd04577979929732488c14b.js
 application.js: application-a506c7cc76dab50c2437b43c9ae38d18.js
 application/index.js: application-a506c7cc76dab50c2437b43c9ae38d18.js
+jquery-1.9.1.js: jquery-1.9.1-186cad25611b3c790cb50517ee029d2a.js
+jquery-1/index.9.1.js: jquery-1.9.1-186cad25611b3c790cb50517ee029d2a.js
 mercury.js: mercury-7d9b29ddd9beb30ef53ca133122d5e4c.js
 mercury/index.js: mercury-7d9b29ddd9beb30ef53ca133122d5e4c.js
 mercury_page.js: mercury_page-19ec15827b31510a0235637820491551.js
