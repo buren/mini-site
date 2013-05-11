@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   attr_accessible :header_priority, :home_id, :permalink, :template, :title
   belongs_to :home
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
   TEMPLATES = %w(blog gallery home static)
 

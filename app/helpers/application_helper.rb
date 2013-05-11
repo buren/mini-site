@@ -11,4 +11,11 @@ module ApplicationHelper
 		return content_tag element, content, html_options
 	end
 
+	def paginate_posts
+		return "" if @posts.length.eql? 0
+		content_tag :p, class: 'pagination' do
+			paginate @posts, window: 2
+		end
+	end
+
 end

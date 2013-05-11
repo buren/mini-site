@@ -6,7 +6,7 @@ ActiveAdmin.register Post do
 	index do
 		selectable_column
 	  column "Title", sortable: :title do |post|
-	    strong { link_to post.title, admin_post_path(post) }
+	    strong { link_to raw(post.title), admin_post_path(post) }
 	  end
 	  column "Content" do |post|
 	    raw post.content

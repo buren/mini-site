@@ -1,19 +1,15 @@
 class PagesController < ApplicationController
+
   def show
   	@page = Page.find_by_id(params[:id])
-  	if @page.posts
-  		@posts =  @page.posts.order('created_at desc').page(params[:page]).per(posts_per_page(@page.template))
-  		@posts = @posts.published unless authenticated?
-  		@posts = @posts.where(id: params[:editing_post_id]) unless params[:editing_post_id].blank?
-  	else
-  		@posts = []
-  	end
+    find_page_posts
 		render_page
   end
 
   def home
   	@page = Page.find_by_template('home')
-  	render_page
+    render_404 and return if @page.nil?
+    redirect_to page_path(@page)
   end
 
   def update
@@ -35,11 +31,20 @@ class PagesController < ApplicationController
 
 private
 
+  def find_page_posts
+    @posts = Post.none
+    return if @page.nil? or @page.posts.empty?
+
+    @posts =  @page.posts.order('created_at desc').page(params[:page]).per(posts_per_page(@page.template))
+    @posts = @posts.published unless authenticated?
+    @posts = @posts.where(id: params[:editing_post_id]) unless params[:editing_post_id].blank?
+  end
+
 	def render_page
 		if @page
 			render 'pages/' + @page.template
 		else
-			render 'shared/page_not_found'
+			render_404 and return
 		end
 	end
 
@@ -48,8 +53,6 @@ private
 		when 'blog'
 			10
 		when 'gallery'
-			4
-		when 'home'
 			4
 		else
 			1000

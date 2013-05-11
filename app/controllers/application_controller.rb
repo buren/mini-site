@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
 	  !is_editing?
 	end
 
+  def render_404
+    render 'shared/page_not_found'
+  end
+
 end
