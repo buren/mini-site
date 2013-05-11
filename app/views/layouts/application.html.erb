@@ -26,10 +26,10 @@
   <script>window.jQuery || document.write("<script src=\"<%= asset_path 'jquery-1.9.1.js' %>\">\x3C/script>")</script>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-  <% if Rails.env.production? && ga_hash[:domain] && ga_hash[:ga_code] %>
+  <% if Rails.env.production? && home_hash[:domain] && home_hash[:ga_code] %>
     <script>
-      var domain = <%= ga_hash[:domain] %>;
-      var ga_code = <%= ga_hash[:ga_code] %>;
+      var domain = <%= home_hash[:domain] %>;
+      var ga_code = <%= home_hash[:ga_code] %>;
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
