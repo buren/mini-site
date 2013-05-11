@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :header_links
-  helper_method :authenticated?, :authenticated_for_edit?, :is_editing?, :not_editing?
+  helper_method :authenticated?, :authenticated_for_edit?, :is_editing?, :not_editing?, :home_hash
 
   def header_links
   	@header_links = Home.first ? Home.first.pages.where('template != ?', 'home').order(:header_priority).limit(5) : []
@@ -29,10 +29,12 @@ class ApplicationController < ActionController::Base
     render 'shared/page_not_found'
   end
 
-  def ga_hash
+  def home_hash
     return {} if Home.first.nil?
     home = Home.first
     {
+      title: home.site_title,
+      author: home.site_author
       domain: home.domain,
       ga_code: home.google_analytics_code
     }
