@@ -3,7 +3,7 @@
 		<%= content_tag(:h1, 'Page not found', { id: 'page_title' }, 'simple') %>
 		<%= content_tag(:div, "We're sorry, page not found.", { id: 'page_content' }, 'simple') %>
 		<p>
-			<%= link_to 'Create page', new_admin_page_path if authenticated? && not_editing? %>
+			<%= link_to 'Create page', new_admin_page_path if authenticated? %>
 		</p>
 	</div>
 	<div class="span6">
