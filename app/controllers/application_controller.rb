@@ -29,4 +29,13 @@ class ApplicationController < ActionController::Base
     render 'shared/page_not_found'
   end
 
+  def ga_hash
+    return {} if Home.first.nil?
+    home = Home.first
+    {
+      domain: home.domain,
+      ga_code: home.google_analytics_code
+    }
+  end
+
 end

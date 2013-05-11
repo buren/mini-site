@@ -1,11 +1,11 @@
 class Home < ActiveRecord::Base
-  attr_accessible :site_author, :site_title
+  attr_accessible :site_author, :site_title, :google_analytics_code, :domain
   has_many :pages
 
   after_destroy :restore_home
 
 private
-	
+
 	def restore_home
 		home = Home.create!(
 			site_author: 'Site author',
