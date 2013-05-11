@@ -1,17 +1,12 @@
 <div id="home">
-	<div class="row-fluid" style="padding-bottom:0px;">
-		<div class="span6">
-			<div class="home-box">
-				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
-				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
-			</div>
+	<div class="container-fluid">
+		<%= render 'posts/add_post' %>
+		<% @posts.each_with_index do |post, index| %>
+			<%= render 'posts/gallery_page_post', post: post, index: index %>
+		<% end %>
+		<div class="row-fluid">
+			<%= paginate @posts, window: 2 %>
 		</div>
-		<div class="span6">
-			<div class="home-box">
-				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
-				<p style="text-align:center;"><%= image_tag 'http://placehold.it/600x400', class: 'home-image' %></p>
-			</div>
-		</div>
+		<%= render 'pages/page_actions' %>
 	</div>
 </div>
-<%= render 'pages/page_actions' %>

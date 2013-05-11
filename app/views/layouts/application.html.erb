@@ -14,7 +14,6 @@
 </head>
 <body>
 	<div class="container-fluid">
-    <%= link_to 'toggle action buttons', '#', class: 'pull-left', id: 'toggle-action-buttons' if authenticated? and not_editing? %>
 		<div id="site-container">
 			<%= render partial: 'shared/header' %>
 			<div id="content-container">

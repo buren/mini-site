@@ -1,11 +1,6 @@
-<%= render_editable_content(:h1, post.title, { id: 'post_title' }, 'simple') %>
+<%= render_editable_content(:h1, raw(post.title), { id: 'post_title' }, 'full') %>
 <% post_content = post.content.nil? ? '' : post.content %>
 <%= render_editable_content(:div, raw(post_content), { id: 'post_content' }, 'full') %>
-<% if authenticated? && not_editing? %>
-	<div class="post-action-buttons">
-	 	<%= link_to 'Edit post', "/editor#{request.path}?editing_post_id=#{post.id}", class: 'btn btn-edit' if not_editing? %>
-	 	<%= link_to 'Destroy', post_path(post), confirm: 'Are you sure?', method: :delete, remote: true, class: 'btn btn-danger post-delete-link-' + post.page.template  %>
-	</div>
-<% end %>
+<%= render 'posts/post_action_buttons', post: post %>
 <%= render_editable_content(:span, post.id, { id: 'post_id', style: 'display:none' }, 'simple') %>
 <%= render_editable_content(:span, @page.id, { id: 'page_id', style: 'display:none' }, 'simple') %>

@@ -3,8 +3,10 @@ ActiveAdmin.register_page "Dashboard" do
   menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
 
   content :title => proc{ 'Dashboard' } do
-    if Page.has_home_page?
-
+    if Page.find_by_template('home').nil?
+      panel "No homepage found" do
+        h3 { link_to "Create home page", new_admin_page_path }
+      end
     end
 
     panel "Pages" do

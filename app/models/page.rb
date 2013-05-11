@@ -13,8 +13,4 @@ class Page < ActiveRecord::Base
     "#{id} #{permalink}".parameterize
   end
 
-  def has_home_page?
-    Page.find_by_template 'home'
-  end
-
 end

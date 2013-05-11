@@ -4,5 +4,6 @@
 		<%= link_to 'Edit page', edit_admin_page_path(@page), class: 'btn' %>
 		<%= link_to 'New page', new_admin_page_path, class: 'btn btn-info' %>
     <%= link_to 'Admin page', admin_root_path, class: 'btn btn-edit pull-right' %>
-	</div>
+    <%= link_to 'preview', '#', class: 'btn pull-right', id: 'toggle-action-buttons' %>
+ 	</div>
 <% end %>

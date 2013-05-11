@@ -3,7 +3,9 @@ $(document).ready(function() {
 
   $('#toggle-action-buttons').on('click', function(e) {
     e.preventDefault();
-    $('.btn').slideToggle(1000);
+    $('.post-action-buttons').slideToggle(1000);
+    $('.page-actions').slideToggle(1000);
+
   });
 
   $('.post-delete-link-blog').on('click', function() {
@@ -15,7 +17,7 @@ $(document).ready(function() {
   });
 
   $('.post-delete-link-home').on('click', function() {
-    $(this).parents(".row-fluid").slideToggle(2000);
+    $(this).parents(".home-box").slideToggle(2000);
   });
 
   $('.post-delete-link-static').on('click', function() {
