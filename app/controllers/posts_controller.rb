@@ -6,8 +6,10 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		post = Post.find(params[:id]).destroy
-		render text: ''
+		post = Post.find(params[:id])
+    post_page = post.page
+    post.destroy
+		redirect_to page_path(post_page)
 	end
 
   def destroy_unpublished

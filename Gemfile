@@ -32,13 +32,10 @@ gem 'newrelic_rpm'
 # Rails WYSIWYG editor
 gem 'mercury-rails'
 
+gem 'turbolinks'
+
 # Pagination
 gem 'kaminari'
-
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-gem 'jquery-turbolinks'
-
 
 # Image processing
 gem 'paperclip'

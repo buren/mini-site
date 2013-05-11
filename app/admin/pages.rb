@@ -18,7 +18,7 @@ ActiveAdmin.register Page do
     f.inputs "Page" do
       f.input :title
       f.input :permalink
-      f.input :header_priority
+      f.input :header_priority, hint: 'Header ordering (1..5) if multiple pages have the same number they will be ordered alphabetically'
       f.input :template, as: :select, collection: Page::TEMPLATES
       f.input :home_id, as: :hidden, value: Home.first ? Home.first.id : nil
     end

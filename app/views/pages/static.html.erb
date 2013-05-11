@@ -1,3 +1,4 @@
+<% content_for :title do %> | <%= @page.title %> <% end %>
 <div class="static-page-content">
 	<%= render 'posts/add_post' %>
 	<% @posts.each do |post| %>

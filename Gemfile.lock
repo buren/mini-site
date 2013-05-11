@@ -93,9 +93,6 @@ GEM
     jquery-rails (2.2.1)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    jquery-turbolinks (1.0.0)
-      railties (>= 3.1.0)
-      turbolinks
     json (1.7.7)
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
@@ -194,7 +191,6 @@ DEPENDENCIES
   binding_of_caller
   coffee-rails (~> 3.2.1)
   eventmachine (~> 1.0.3)
-  jquery-turbolinks
   kaminari
   mercury-rails
   meta_search (>= 1.1.0.pre)

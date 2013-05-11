@@ -6,6 +6,7 @@ class Page < ActiveRecord::Base
   TEMPLATES = %w(blog gallery home static)
 
   validates_presence_of :home
+  validates_presence_of :permalink, :title
   validates_uniqueness_of :permalink, :title
   validates_inclusion_of :template, in: TEMPLATES, allow_nil: false
 
