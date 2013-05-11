@@ -25,6 +25,10 @@ active_admin.css: active_admin-e331df1411141032e0061b421e9470e4.css
 active_admin/index.css: active_admin-e331df1411141032e0061b421e9470e4.css
 application.css: application-ebcf0552e7a197c28d794cd7351f63a4.css
 application/index.css: application-ebcf0552e7a197c28d794cd7351f63a4.css
+font-awesome-ie7.css: font-awesome-ie7-0f5f068311f99a4b8795eaa38f9b727a.css
+font-awesome-ie7/index.css: font-awesome-ie7-0f5f068311f99a4b8795eaa38f9b727a.css
+font-awesome.css: font-awesome-a2367e1228e2c5d06ceccf753435dfaa.css
+font-awesome/index.css: font-awesome-a2367e1228e2c5d06ceccf753435dfaa.css
 mercury.css: mercury-13f27da02dea5c112f1ab283351f13bf.css
 mercury/index.css: mercury-13f27da02dea5c112f1ab283351f13bf.css
 mercury/button.png: mercury/button-1761c70e8456d8ddae4e0caca3a58c21.png

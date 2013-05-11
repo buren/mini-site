@@ -24,7 +24,7 @@ BlogApplication::Application.configure do
   config.assets.digest = true
 
   # Precompile assets that aren't included in application.js or application.css
-  config.assets.precompile += %w( active_admin mercury_page.js jquery-1.9.1.js jquery-1.7.js mercury.js mercury.css )
+  config.assets.precompile += %w(active_admin mercury_page.js jquery-1.9.1.js jquery-1.7.js mercury.js mercury.css font-awesome-ie7.css font-awesome.css)
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation can not be found)
