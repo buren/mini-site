@@ -14,21 +14,25 @@ group :assets do
 end
 
 group :development do
-	gem 'better_errors', '0.3.2' # Better rails error pages
+	gem 'better_errors'
 	gem 'binding_of_caller'
 	gem 'mysql2'
 end
 
 gem 'activeadmin'
-gem "meta_search",    '>= 1.1.0.pre'
+gem "meta_search",    '>= 1.1.0.pre' # activeadmin searching/filtering
 
 gem "eventmachine", "~> 1.0.3"
 
 gem 'thin' # Use thin insead of WebBrick
 
+# New Relic performance monitoring
+gem 'newrelic_rpm'
+
+# Rails WYSIWYG editor
 gem 'mercury-rails'
 
-# Easy pagination
+# Pagination
 gem 'kaminari'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

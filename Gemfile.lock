@@ -115,6 +115,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.2)
     mysql2 (0.3.11)
+    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     paperclip (3.4.1)
@@ -189,7 +190,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   aws-sdk
-  better_errors (= 0.3.2)
+  better_errors
   binding_of_caller
   coffee-rails (~> 3.2.1)
   eventmachine (~> 1.0.3)
@@ -198,6 +199,7 @@ DEPENDENCIES
   mercury-rails
   meta_search (>= 1.1.0.pre)
   mysql2
+  newrelic_rpm
   paperclip
   pg
   rails (= 3.2.13)
