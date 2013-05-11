@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
     home = Home.first
     {
       title: home.site_title,
-      author: home.site_author
+      author: home.site_author,
       domain: home.domain,
       ga_code: home.google_analytics_code
     }
