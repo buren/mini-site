@@ -42,7 +42,9 @@ private
 
 	def render_page
 		if @page
-			render 'pages/' + @page.template
+      template = @page.template
+      template = 'blog' if template.eql?('home')
+			render 'pages/' + template
 		else
 			render_404 and return
 		end
