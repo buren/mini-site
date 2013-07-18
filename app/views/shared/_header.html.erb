@@ -7,7 +7,7 @@
 	<div id="menu">
 		<% @header_links.each do |page| %>
 		<div class="box-link">
-			<%= link_to page.title, page, class: 'header-link' %>
+			<%= link_to page.title, "/#{page.permalink}", class: 'header-link' %>
 		</div>
 		<% end %>
 	</div>

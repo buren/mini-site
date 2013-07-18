@@ -9,7 +9,8 @@ class PagesController < ApplicationController
   def home
   	@page = Page.find_by_template('home')
     render_404 and return if @page.nil?
-    redirect_to page_path(@page)
+    find_page_posts
+    render_page
   end
 
   def update
@@ -27,6 +28,13 @@ class PagesController < ApplicationController
   end
 
   def destroy
+  end
+
+  def find_page_by_permalink
+    @page = Page.find_by_permalink(request.path[1..100])
+    render_404 and return if @page.nil?
+    find_page_posts
+    render_page
   end
 
 private
