@@ -1,9 +1,9 @@
 class PagesController < ApplicationController
 
   def show
-  	@page = Page.find_by_id(params[:id])
+  	@page = Page.find_by_permalink(request.path[1..100])
     find_page_posts
-		render_page
+	render_page
   end
 
   def home

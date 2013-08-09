@@ -1,4 +1,6 @@
 class Page < ActiveRecord::Base
+
+
   attr_accessible :header_priority, :home_id, :permalink, :template, :title
   belongs_to :home
   has_many :posts, dependent: :destroy
@@ -11,7 +13,11 @@ class Page < ActiveRecord::Base
   validates_inclusion_of :template, in: TEMPLATES, allow_nil: false
 
   def to_param
-    "#{id} #{permalink}".parameterize
+    if $request_path.include? "admin"
+      "#{id}"
+    else
+      "#{permalink}".parameterize
+    end
   end
 
 end

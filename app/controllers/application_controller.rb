@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :header_links
+  before_filter :header_links, :set_request_path
   helper_method :authenticated?, :authenticated_for_edit?, :is_editing?, :not_editing?, :home_hash
 
   def header_links
@@ -38,6 +38,12 @@ class ApplicationController < ActionController::Base
       domain: home.domain,
       ga_code: home.google_analytics_code
     }
+  end
+
+private 
+
+  def set_request_path
+    $request_path = request.path
   end
 
 end
