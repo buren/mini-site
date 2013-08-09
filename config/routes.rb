@@ -20,7 +20,7 @@ BlogApplication::Application.routes.draw do
 
   mount Mercury::Engine => '/'
 
-  resources :pages, path: '/', only: [:show]
+  resources :pages, path: '/', only: [:show, :update]
 
   resources :pages do
     member do
