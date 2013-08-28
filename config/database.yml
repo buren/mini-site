@@ -1,5 +1,5 @@
 # MySQL.  Versions 4.1 and 5.0 are recommended.
-# 
+#
 # Install the MYSQL driver
 #   gem install mysql2
 #
@@ -8,6 +8,7 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
+<%  db_socket = ENV['DEV_MYSQL_SOCKET'] || "/tmp/mysql.sock" %>
 development:
   adapter: mysql2
   encoding: utf8
@@ -16,7 +17,7 @@ development:
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: <%= db_socket %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +30,7 @@ test:
   pool: 5
   username: root
   password:
-  socket: /tmp/mysql.sock
+  socket: <%= db_socket %>
 
 production:
   adapter: mysql2
