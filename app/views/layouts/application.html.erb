@@ -10,6 +10,11 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "http://fonts.googleapis.com/css?family=Dosis", "data-turbolinks-track" => true %>
 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write("<script src=\"<%= asset_path 'jquery-1.10.2.js' %>\">\x3C/script>")</script>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+
   <%= csrf_meta_tags %>
   <!--[if IE 7]><%= stylesheet_link_tag 'font-awesome-ie7' %><![endif]-->
 </head>
@@ -23,9 +28,6 @@
 		</div>
 		<%= render partial: 'shared/footer' %>
 	</div>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>window.jQuery || document.write("<script src=\"<%= asset_path 'jquery-1.9.1.js' %>\">\x3C/script>")</script>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
   <% if Rails.env.production? && home_hash[:domain] && home_hash[:ga_code] %>
     <script>
