@@ -20,6 +20,7 @@ group :development do
 end
 
 gem 'nokogiri'
+gem 'rails_12factor'
 
 gem "therubyracer", :require => 'v8'
 
