@@ -205,6 +205,7 @@ DEPENDENCIES
   meta_search (>= 1.1.0.pre)
   mysql2
   newrelic_rpm
+  nokogiri
   paperclip
   pg
   rails (= 3.2.13)

@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :content, :page_id, :title, :page, :published, :image_holder
+  attr_accessible :content, :page_id, :title, :page, :published, :image_holder, :gallery
   belongs_to :page
 
   scope :all_posts

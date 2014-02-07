@@ -1,5 +1,5 @@
 <% if authenticated? && not_editing? %>
   <div class="post-action-buttons">
-    <%= link_to 'Edit post', "/editor#{request.path}?editing_post_id=#{post.id}", class: 'btn btn-edit' if not_editing? %>
+    <%= link_to 'Edit post', "/editor#{request.path}?editing_post_id=#{post.id}", class: 'btn btn-edit' %>
   </div>
 <% end %>

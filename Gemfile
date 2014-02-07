@@ -19,6 +19,8 @@ group :development do
 	gem 'mysql2'
 end
 
+gem 'nokogiri'
+
 gem "therubyracer", :require => 'v8'
 
 gem 'activeadmin'
@@ -26,7 +28,7 @@ gem "meta_search",    '>= 1.1.0.pre' # activeadmin searching/filtering
 
 gem "eventmachine", "~> 1.0.3"
 
-gem 'thin' # Use thin insead of WebBrick
+gem 'thin' # Use thin instead of WebBrick
 
 # New Relic performance monitoring
 gem 'newrelic_rpm'

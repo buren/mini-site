@@ -250,7 +250,23 @@ nav.pagination{
   }
   }
 
-
+.modal {
+  .close {
+    color: #fff;
+  }
+  .modal-header {
+    padding: 0;
+  }
+  .modal-body {
+    padding: 0;
+    // overflow-y: visible;
+    #image-target {
+      img {
+        // margin-top: -22px;
+      }
+    }
+  }
+}
 
 
 
@@ -262,21 +278,3 @@ nav.pagination{
   }
 
  }
-
-.modal {
-  .close {
-    color: #fff;
-  }
-  .modal-header {
-    padding: 0;
-  }
-  .modal-body {
-    padding: 0;
-    overflow-y: visible;
-    #image-target {
-      img {
-        margin-top: -22px;
-      }
-    }
-  }
-}
