@@ -11,6 +11,7 @@
 # GO AFTER THE REQUIRES BELOW.
 #
 #= require jquery.fancybox.pack
+#= require jquery.fancybox-thumbs
 #= require jquery.turbolinks
 # require jquery_ujs
 #= require bootstrap

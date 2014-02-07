@@ -21,6 +21,13 @@
  $black: #1D1D1B;
  $border_color: #bfbfbf;
 
+// Needed to get fancybox working on iOS
+.fancybox {
+  cursor: pointer;
+}
+
+img {cursor:pointer}
+
 .hidden {
   display: none;
 }
