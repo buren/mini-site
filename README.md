@@ -9,6 +9,13 @@ www.maxblomqvist.com
 - Home / Blog / Gallery / Static page templates
 - Responsive
 
+## Configuring
+Set AWS config variables so images can be uploaded in production:
+```bash
+export AWS_BUCKET='...'
+export AWS_ACCESS_KEY_ID='...'
+export AWS_SECRET_ACCESS_KEY='...'
+```
 
 ## Technology
 
