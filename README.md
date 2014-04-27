@@ -1,6 +1,9 @@
 # Simple blog appliction
 www.maxblomqvist.com
 
+[![Code Climate](https://codeclimate.com/github/buren/mini-site.png)](https://codeclimate.com/github/buren/mini-site)
+
+
 ## Features
 
 - Inline editing
