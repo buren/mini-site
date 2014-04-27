@@ -48,7 +48,7 @@ private
     @posts = Post.none
     return if @page.nil? or @page.posts.empty?
 
-    @posts =  @page.posts.order('created_at desc').page(params[:page]).per(posts_per_page(@page.template))
+    @posts =  @page.sorted_posts.page(params[:page]).per(posts_per_page(@page.template))
     @posts = @posts.published unless authenticated?
     @posts = @posts.where(id: params[:editing_post_id]) unless params[:editing_post_id].blank?
   end
