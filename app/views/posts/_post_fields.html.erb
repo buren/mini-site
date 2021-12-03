@@ -1,6 +1,0 @@
-<%= render_editable_content(:h1, raw(post.title), { id: 'post_title' }, 'full') %>
-<% post_content = post.content.nil? ? '' : post.content %>
-<%= render_editable_content(:div, raw(post_content), { id: 'post_content' }, 'full') %>
-<%= render 'posts/post_action_buttons', post: post %>
-<%= render_editable_content(:span, post.id, { id: 'post_id', style: 'display:none' }, 'simple') %>
-<%= render_editable_content(:span, @page.id, { id: 'page_id', style: 'display:none' }, 'simple') %>

@@ -1,9 +1,0 @@
-<div class="post-action-buttons">
-  <% if authenticated? && not_editing? %>
-  	<%= form_for Post.new do |f| %>
-  		<%= f.hidden_field :page_id, value: @page.id %>
-  		<%= f.hidden_field :url, value: request.path %>
-  		<%= f.submit 'New post', class: 'btn btn-info' %>
-  	<% end %>
-  <% end %>
-</div>
